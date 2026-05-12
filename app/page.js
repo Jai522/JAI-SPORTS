@@ -3,7 +3,7 @@ export default function Home() {
     {
       id: 1,
       name: "jai",
-      price: "$10000000",
+      price: "₹10000",
       image:
         "/jai.jpg",
     },
