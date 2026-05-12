@@ -1,168 +1,252 @@
 export default function Home() {
-  const products = [
-    {
-      id: 1,
-      name: "Jai Premium Cricket Bat",
-      price: "₹10,000",
-      image: "/jai.jpg",
-    },
-    {
-      id: 2,
-      name: "Professional Football",
-      price: "₹899",
-      image:
-        "https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1200&auto=format&fit=crop",
-    },
-    {
-      id: 3,
-      name: "Basketball Pro",
-      price: "₹799",
-      image:
-        "https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=1200&auto=format&fit=crop",
-    },
-  ];
-
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-black text-white overflow-x-hidden">
 
       {/* NAVBAR */}
-      <nav className="flex items-center justify-between px-8 py-5 border-b border-gray-800">
-        <h1 className="text-3xl font-bold text-red-500">
+      <nav className="flex items-center justify-between px-6 md:px-10 py-6 border-b border-white/10 backdrop-blur bg-black/40 sticky top-0 z-50">
+        <h1 className="text-2xl md:text-3xl font-black tracking-[0.2em]">
           JAI SPORTS
         </h1>
 
-        <div className="flex gap-6 text-sm md:text-base">
-          <a href="#" className="hover:text-red-500">Home</a>
-          <a href="#trending" className="hover:text-red-500">Trending</a>
-          <a href="#products" className="hover:text-red-500">Shop</a>
-          <a href="#contact" className="hover:text-red-500">Contact</a>
+        <div className="hidden md:flex gap-10 text-sm tracking-wide text-gray-300">
+          <a href="#" className="hover:text-white transition">New</a>
+          <a href="#collection" className="hover:text-white transition">Collection</a>
+          <a href="#featured" className="hover:text-white transition">Featured</a>
+          <a href="#contact" className="hover:text-white transition">Contact</a>
         </div>
+
+        <button className="bg-white text-black px-5 py-2 rounded-full text-sm font-bold hover:scale-105 transition">
+          Shop Now
+        </button>
       </nav>
 
       {/* HERO */}
-      <section className="relative h-[85vh] flex items-center justify-center text-center">
+      <section className="relative h-screen flex items-center justify-center text-center">
+
         <img
-          src="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1600&auto=format&fit=crop"
-          className="absolute inset-0 w-full h-full object-cover opacity-40"
+          src="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=2000&auto=format&fit=crop"
           alt="sports"
+          className="absolute inset-0 w-full h-full object-cover opacity-40"
         />
 
-        <div className="relative z-10 max-w-3xl px-5">
-          <h2 className="text-5xl md:text-7xl font-extrabold mb-6">
-            Live Sports. Latest Gear. Real Action.
-          </h2>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/50 to-black" />
 
-          <p className="text-gray-300 text-lg md:text-2xl mb-8">
-            Cricket • Football • Basketball • Trending Matches • Premium Sports Gear
+        <div className="relative z-10 max-w-5xl px-6">
+
+          <p className="text-gray-300 tracking-[0.3em] text-sm mb-6">
+            PERFORMANCE • POWER • SPEED
           </p>
 
-          <button className="bg-red-500 px-8 py-4 rounded-xl text-xl font-semibold hover:bg-red-600 transition">
-            Explore Now
+          <h1 className="text-5xl md:text-8xl font-black leading-none tracking-tight mb-8">
+            UNLEASH <br /> YOUR GAME
+          </h1>
+
+          <p className="text-gray-300 text-lg md:text-2xl max-w-2xl mx-auto mb-10">
+            Premium sports gear crafted for athletes who never stop pushing limits.
+          </p>
+
+          <div className="flex flex-col md:flex-row gap-5 justify-center">
+            <button className="bg-white text-black px-8 py-4 rounded-full font-bold hover:scale-105 transition">
+              Explore Collection
+            </button>
+
+            <button className="border border-white/30 px-8 py-4 rounded-full font-bold hover:bg-white hover:text-black transition">
+              Watch Story
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* FEATURE STRIP */}
+      <section className="grid md:grid-cols-3 border-y border-white/10 text-center py-16">
+
+        <div>
+          <h3 className="text-2xl font-bold mb-2">Elite Quality</h3>
+          <p className="text-gray-400">Built for professionals</p>
+        </div>
+
+        <div>
+          <h3 className="text-2xl font-bold mb-2">Modern Design</h3>
+          <p className="text-gray-400">Luxury sports aesthetics</p>
+        </div>
+
+        <div>
+          <h3 className="text-2xl font-bold mb-2">Maximum Performance</h3>
+          <p className="text-gray-400">Engineered for speed</p>
+        </div>
+
+      </section>
+
+      {/* COLLECTION */}
+      <section id="collection" className="px-6 md:px-12 py-24">
+
+        <div className="flex items-end justify-between mb-14">
+          <div>
+            <p className="text-gray-400 mb-2">LATEST COLLECTION</p>
+
+            <h2 className="text-4xl md:text-6xl font-black">
+              Featured Gear
+            </h2>
+          </div>
+
+          <button className="hidden md:block border border-white/20 px-6 py-3 rounded-full hover:bg-white hover:text-black transition">
+            View All
+          </button>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+
+          {/* CARD 1 */}
+          <div className="group bg-zinc-900 rounded-3xl overflow-hidden">
+            <div className="overflow-hidden">
+              <img
+                src="/jai.jpg"
+                alt="cricket bat"
+                className="w-full h-[450px] object-cover group-hover:scale-110 transition duration-500"
+              />
+            </div>
+
+            <div className="p-6">
+              <h3 className="text-2xl font-bold mb-2">
+                Jai Premium Cricket Bat
+              </h3>
+
+              <p className="text-gray-400 mb-4">
+                Built for explosive power and perfect balance.
+              </p>
+
+              <div className="flex items-center justify-between">
+                <p className="text-xl font-bold">₹10,000</p>
+
+                <button className="bg-white text-black px-5 py-2 rounded-full font-semibold">
+                  Buy
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* CARD 2 */}
+          <div className="group bg-zinc-900 rounded-3xl overflow-hidden">
+            <div className="overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1200&auto=format&fit=crop"
+                alt="football"
+                className="w-full h-[450px] object-cover group-hover:scale-110 transition duration-500"
+              />
+            </div>
+
+            <div className="p-6">
+              <h3 className="text-2xl font-bold mb-2">
+                Professional Football
+              </h3>
+
+              <p className="text-gray-400 mb-4">
+                Precision control with premium grip technology.
+              </p>
+
+              <div className="flex items-center justify-between">
+                <p className="text-xl font-bold">₹899</p>
+
+                <button className="bg-white text-black px-5 py-2 rounded-full font-semibold">
+                  Buy
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* CARD 3 */}
+          <div className="group bg-zinc-900 rounded-3xl overflow-hidden">
+            <div className="overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=1200&auto=format&fit=crop"
+                alt="basketball"
+                className="w-full h-[450px] object-cover group-hover:scale-110 transition duration-500"
+              />
+            </div>
+
+            <div className="p-6">
+              <h3 className="text-2xl font-bold mb-2">
+                Basketball Pro
+              </h3>
+
+              <p className="text-gray-400 mb-4">
+                Designed for next-level indoor & outdoor play.
+              </p>
+
+              <div className="flex items-center justify-between">
+                <p className="text-xl font-bold">₹799</p>
+
+                <button className="bg-white text-black px-5 py-2 rounded-full font-semibold">
+                  Buy
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* FEATURED */}
+      <section
+        id="featured"
+        className="relative py-32 text-center overflow-hidden"
+      >
+
+        <div className="absolute inset-0 bg-gradient-to-r from-red-600/20 via-black to-blue-600/20" />
+
+        <div className="relative z-10 px-6">
+
+          <p className="tracking-[0.3em] text-gray-400 mb-4">
+            BUILT FOR ATHLETES
+          </p>
+
+          <h2 className="text-5xl md:text-7xl font-black mb-8">
+            SPEED. POWER. DOMINANCE.
+          </h2>
+
+          <p className="text-gray-300 max-w-2xl mx-auto text-lg mb-10">
+            Experience elite-level performance gear inspired by modern sports culture.
+          </p>
+
+          <button className="bg-white text-black px-10 py-4 rounded-full font-bold hover:scale-105 transition">
+            Discover More
           </button>
         </div>
       </section>
 
-      {/* TRENDING SECTION (IMPORTANT FOR RETENTION) */}
-      <section id="trending" className="px-8 py-20">
-        <h2 className="text-4xl font-bold mb-10 text-red-500">
-          🔥 Trending Today
-        </h2>
-
-        <div className="grid md:grid-cols-3 gap-6">
-          <div className="bg-gray-900 p-6 rounded-2xl hover:scale-105 transition">
-            🏏 India vs Australia - Live Match Updates
-          </div>
-
-          <div className="bg-gray-900 p-6 rounded-2xl hover:scale-105 transition">
-            ⚽ Premier League Highlights
-          </div>
-
-          <div className="bg-gray-900 p-6 rounded-2xl hover:scale-105 transition">
-            🏆 IPL 2026 Trending Scores
-          </div>
-        </div>
-      </section>
-
-      {/* PRODUCTS */}
-      <section id="products" className="py-20 px-8">
-        <h2 className="text-5xl font-bold text-center mb-4">
-          Featured Sports Gear
-        </h2>
-
-        <p className="text-center text-gray-400 mb-14">
-          Trusted equipment for athletes & sports lovers
-        </p>
-
-        <div className="grid md:grid-cols-3 gap-10">
-          {products.map((product) => (
-            <div
-              key={product.id}
-              className="bg-gray-900 rounded-3xl overflow-hidden shadow-lg hover:scale-105 transition"
-            >
-              <img
-                src={product.image}
-                alt={product.name}
-                className="w-full h-72 object-cover"
-              />
-
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-2">
-                  {product.name}
-                </h3>
-
-                <p className="text-red-500 text-xl mb-5">
-                  {product.price}
-                </p>
-
-                <button className="w-full bg-red-500 py-3 rounded-xl font-semibold hover:bg-red-600">
-                  Add To Cart
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* WHY USERS STAY */}
-      <section className="bg-gray-900 py-20 px-8 text-center">
-        <h2 className="text-4xl font-bold mb-10">
-          Why JAI SPORTS?
-        </h2>
-
-        <div className="grid md:grid-cols-3 gap-8 text-gray-300">
-          <p>⚡ Fast sports updates & trending news</p>
-          <p>🏏 Cricket, Football & Basketball coverage</p>
-          <p>🔥 Daily highlights & match insights</p>
-        </div>
-      </section>
-
       {/* CONTACT */}
-      <section id="contact" className="py-20 px-8 text-center">
-        <h2 className="text-5xl font-bold mb-10">
+      <section
+        id="contact"
+        className="py-24 border-t border-white/10 text-center px-6"
+      >
+
+        <h2 className="text-4xl md:text-6xl font-black mb-12">
           Contact Us
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          <div className="bg-gray-900 p-8 rounded-3xl">
-            <h3 className="text-red-500 text-2xl font-bold mb-3">Email</h3>
-            <p>sportx@email.com</p>
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+          <div className="bg-zinc-900 rounded-3xl p-10">
+            <h3 className="text-xl font-bold mb-3">Email</h3>
+            <p className="text-gray-400">sportx@email.com</p>
           </div>
 
-          <div className="bg-gray-900 p-8 rounded-3xl">
-            <h3 className="text-red-500 text-2xl font-bold mb-3">Phone</h3>
-            <p>+91 7599320375</p>
+          <div className="bg-zinc-900 rounded-3xl p-10">
+            <h3 className="text-xl font-bold mb-3">Phone</h3>
+            <p className="text-gray-400">+91 7599320375</p>
           </div>
 
-          <div className="bg-gray-900 p-8 rounded-3xl">
-            <h3 className="text-red-500 text-2xl font-bold mb-3">Location</h3>
-            <p>Meerut, Uttar Pradesh, India</p>
+          <div className="bg-zinc-900 rounded-3xl p-10">
+            <h3 className="text-xl font-bold mb-3">Location</h3>
+            <p className="text-gray-400">Meerut, Uttar Pradesh</p>
           </div>
+
         </div>
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t border-gray-800 py-6 text-center text-gray-500">
-        © 2026 JAI SPORTS. All rights reserved.
+      <footer className="border-t border-white/10 py-8 text-center text-gray-500 text-sm">
+        © 2026 JAI SPORTS — Built for champions
       </footer>
 
     </main>
